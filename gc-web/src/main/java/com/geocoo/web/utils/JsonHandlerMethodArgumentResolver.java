@@ -1,4 +1,4 @@
-package com.geocoo.utils;
+package com.geocoo.web.utils;
 
 
 import com.alibaba.fastjson.JSON;

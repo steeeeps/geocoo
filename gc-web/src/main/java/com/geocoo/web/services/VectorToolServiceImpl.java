@@ -1,10 +1,10 @@
-package com.geocoo.services;
+package com.geocoo.web.services;
 
 import com.geocoo.common.utils.FileUtil;
 import com.geocoo.common.utils.ResponseResult;
 import com.geocoo.common.utils.ZipUtil;
-import com.geocoo.model.AppProperties;
-import com.geocoo.model.ConvertParams;
+import com.geocoo.web.model.AppProperties;
+import com.geocoo.web.model.ConvertParams;
 import com.geocoo.vectortools.model.ShapefileTranslateOptionsEnum;
 import com.geocoo.vectortools.model.SupportFormatsEnum;
 import com.geocoo.vectortools.model.TranslateParams;

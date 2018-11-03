@@ -1,7 +1,7 @@
-package com.geocoo.services;
+package com.geocoo.web.services;
 
 import com.geocoo.common.utils.ResponseResult;
-import com.geocoo.model.ConvertParams;
+import com.geocoo.web.model.ConvertParams;
 import org.springframework.web.multipart.MultipartFile;
 
 /**

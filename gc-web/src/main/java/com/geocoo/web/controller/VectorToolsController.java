@@ -3,10 +3,10 @@ package com.geocoo.web.controller;
 
 import com.geocoo.common.utils.FileUtil;
 import com.geocoo.common.utils.ResponseResult;
-import com.geocoo.model.AppProperties;
-import com.geocoo.model.ConvertParams;
-import com.geocoo.services.VectorToolService;
-import com.geocoo.utils.JsonParam;
+import com.geocoo.web.model.AppProperties;
+import com.geocoo.web.model.ConvertParams;
+import com.geocoo.web.services.VectorToolService;
+import com.geocoo.web.utils.JsonParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -58,43 +58,9 @@ public class VectorToolsController {
         if (resultFile == null) {
             return;
         }
-
         response.setHeader("Content-Type", "application/zip");
         response.setHeader("Content-Disposition", "attachment;filename=" + resultFile.getName());
-        FileInputStream fis = null;
-        BufferedInputStream bis = null;
-        try {
-            byte[] bytes = new byte[1024];
-            OutputStream ops = response.getOutputStream();
-            fis = new FileInputStream(resultFile);
-            bis = new BufferedInputStream(fis);
-            int i = bis.read(bytes);
-            while (i != -1) {
-                ops.write(bytes, 0, i);
-                ops.flush();
-                i = bis.read(bytes);
-            }
-            resultFile.delete();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (bis != null) {
-                    bis.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                if (fis != null) {
-                    fis.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
+        ResponseUtil.downloadFile(response, resultFile, true);
 
     }
 

@@ -1,4 +1,4 @@
-package com.geocoo.model;
+package com.geocoo.web.model;
 
 import org.springframework.util.StringUtils;
 

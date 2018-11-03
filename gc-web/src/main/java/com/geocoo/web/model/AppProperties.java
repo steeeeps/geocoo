@@ -1,4 +1,4 @@
-package com.geocoo.model;
+package com.geocoo.web.model;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -35,4 +35,14 @@ public class AppProperties {
     }
 
 
+    @Value("${app.image.server}")
+    private String imageServer;
+
+    public String getImageServer() {
+        return imageServer;
+    }
+
+    public void setImageServer(String imageServer) {
+        this.imageServer = imageServer;
+    }
 }

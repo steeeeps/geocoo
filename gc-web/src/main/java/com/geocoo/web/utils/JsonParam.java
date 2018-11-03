@@ -1,4 +1,4 @@
-package com.geocoo.utils;
+package com.geocoo.web.utils;
 
 import org.springframework.core.annotation.AliasFor;
 

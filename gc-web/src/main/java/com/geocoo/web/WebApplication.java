@@ -1,8 +1,10 @@
 package com.geocoo.web;
 
-import com.geocoo.utils.JsonHandlerMethodArgumentResolver;
+import com.geocoo.web.utils.JsonHandlerMethodArgumentResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
@@ -11,6 +13,10 @@ import java.util.List;
 
 
 @SpringBootApplication(scanBasePackages = {"com.geocoo"})
+@Configuration
+@PropertySource({
+        "classpath:application.properties"
+})
 public class WebApplication extends WebMvcConfigurationSupport {
 
     public static void main(String[] args) {

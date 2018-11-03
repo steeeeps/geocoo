@@ -21,6 +21,9 @@
         <module>gc-web</module>
         <module>gc-vectortools</module>
         <module>gc-common</module>
+        <module>gc-gewcrawler</module>
+        <module>gc-deps</module>
+        <module>gc-earthview</module>
     </modules>
 
 
