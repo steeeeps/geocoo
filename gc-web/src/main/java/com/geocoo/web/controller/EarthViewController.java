@@ -1,5 +1,6 @@
 package com.geocoo.web.controller;
 
+
 import com.geocoo.earthview.model.EarthViewWebModel;
 import com.geocoo.earthview.service.EarthViewService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class EarthViewController {
     @Autowired
     EarthViewService earthViewService;
 
+
     @RequestMapping(value = "/list/{page}/{size}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<EarthViewWebModel> listEarthView(@PathVariable("page") int page,
                                                  @PathVariable("size") int size) {
@@ -40,6 +42,8 @@ public class EarthViewController {
 
     @RequestMapping(value = "/download/{id}", method = RequestMethod.GET)
     public void download(@PathVariable("id") Integer id, HttpServletResponse response) {
+
+
         String filepath = earthViewService.getEarthviewFilepath(id);
         File file = new File(filepath);
         if (file == null) {

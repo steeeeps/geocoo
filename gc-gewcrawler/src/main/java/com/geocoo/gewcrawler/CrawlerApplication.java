@@ -17,7 +17,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "com.geocoo")
 @EntityScan(basePackages = "com.geocoo")
 @Configuration
-@PropertySource("file:/Users/taopy/develop/gits/geocoo/gc-web/src/main/resources/application.properties")
+@PropertySource(
+        {
+                "classpath:crawler.properties",
+                "classpath:proxy.properties",
+                "file:/Users/taopy/develop/gits/geocoo/gc-web/src/main/resources/application.properties",
+                "file:/Users/taopy/develop/gits/geocoo/gc-earthview/src/main/resources/earthview.properties"
+        })
 public class CrawlerApplication {
 
     public static void main(String[] args) {

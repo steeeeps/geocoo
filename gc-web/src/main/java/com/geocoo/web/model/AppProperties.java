@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 @Component
 public class AppProperties {
 
-    @Value("${tempdir}")
+    @Value("${vectortool.tempdir}")
     private String tempDir;
 
     public String getTempDir() {

@@ -50,6 +50,7 @@ public class Crawler {
         );
     }
 
+
     public void start() {
 
         try {
@@ -116,7 +117,7 @@ public class Crawler {
 
     }
 
-    private void downloadImg(String url, String type) throws IOException {
+    public void downloadImg(String url, String type) throws IOException {
         Request request = new Request.Builder().url(url).build();
         Response response = client.newCall(request).execute();
         if (!response.isSuccessful()) {

@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
  * @create 2018-11-03 10:15 PM
  */
 @Component
-@Configuration
-@PropertySource("classpath:earthview.properties")
 public class EarthviewConfig {
 
     @Value("${app.image.server}")
